@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ABP Minggu 2
+        </title>
+        <style>
+            .paragraf {
+                background-color: black;
+            }
+            #pro {
+                color:chartreuse;
+            }
+            a:hover {
+                color:green;
+            }
+            p::first-line {
+                color:magenta;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="pro">
+            Lagi di gedung TULT nih, kamu lagi dimana, Lagi di gedung TULT nih, kamu lagi dimana,Lagi di gedung TULT nih, kamu lagi dimana,Lagi di gedung TULT nih, kamu lagi dimana,Lagi di gedung TULT nih, kamu lagi dimana,
+        </p>
+        <p class="paragraf">
+            Lagi di gedung TULT nih lantai tujuh
+        </p>
+        <p class="paragraf">
+            Lagi di gedung lantai tujuh
+        </p>
+        <a href="#">Yuk kita ke danau galau</a>
+
+
+        <script src=""></script>
+        <script>
+            var nama = ["Aldi","Bambang","Udin"];
+            alert("Halo " + nama[1]);
+        </script>
+
+        <button onclick="sayHello()">Klik Aku!</button>
+        <script>
+            console.log("Testing"); //console log
+                
+            alert("Selamat datang di tutorial belajar JavaScript"); //alert
+            function sayHello() {
+                alert("Hello!");
+            }
+    
+            document.write("<h1>Hai</h1>"); //document.write
+    
+            var hasil = document.getElementById("pro"); //inner HTML
+            hasil.innerHTML = "Hai hai";
+        </script>
+        
+        <script> // dialog confirm
+            var yakin = confirm("Kunjungi google?");
+            if (yakin) {
+                window.location = "https://www.google.com";
+            } else {
+                document.write("<p>Canceled</p>")
+            }
+        </script>
+
+        <script> // dialog prompt
+            var nama = prompt("Siapa nama kamu?"); 
+            document.write("<p>Hello " + nama + "</p>");
+        </script>
+
+        <script> //array
+            var products = ["Senter", "Radio", "Antena", "Obeng"];
+            
+            document.write("<h3>Daftar Produk</h3>");
+            document.write("<ol>");
+            
+            for (let i = 0; i < products.length; i++) { // memakai for
+                document.write(`<li>${products[i]}</li>`);
+            }
+
+            products.forEach((data) => { // memakai forEach
+                document.write(`<li>${data}</li>`);
+            })
+            document.write("</ol>")
+        </script>
+
+        <script> // properti dan method
+            var car = { 
+                // properti
+                type:"Fiat",
+                model:"500",
+                color:"white",
+
+                // method
+                start: function() {
+                    console.log("ini method start");
+                },
+                drive: function() {
+                    console.log("ini method drive");
+                },
+                brake: function() {
+                    console.log("ini method brake");
+                },
+                stop: function() {
+                    console.log("ini method stop");
+                }
+            }
+        </script>
+
+        <script> // object class
+            function Person(firstName, lastName) {
+                // properti
+                this.firstName = firstName;
+                this.lastName = lastName;
+
+                // method
+                this.fullName = function() {
+                    return `${this.firstName} ${this.lastName}`
+                }
+
+                this.showName = function() {
+                    document.write(this.fullName());
+                }
+            }
+            
+            var person1 = new Person("Aldi", "Haryojudanto");
+            var person2 = new Person("Oke", "Bang");
+
+            person1.showName();
+            document.write("<br>");
+            person2.showName();
+        </script>
+    </body>
+</html>
